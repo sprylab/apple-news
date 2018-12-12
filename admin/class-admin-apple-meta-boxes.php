@@ -114,7 +114,7 @@ class Admin_Apple_Meta_Boxes extends Apple_News {
 		}
 
 		// Check the nonce.
-		check_admin_referer( self::PUBLISH_ACTION, 'apple_news_nonce' );
+		check_admin_referer( 'apple_news_publish', 'apple_news_nonce' );
 
 		if ( ! empty( $_POST['apple_news_is_excluded'] ) && 1 === intval( $_POST['apple_news_is_excluded'] ) ) {
 			$is_excluded = true;
