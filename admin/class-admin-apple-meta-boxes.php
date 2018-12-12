@@ -136,6 +136,13 @@ class Admin_Apple_Meta_Boxes extends Apple_News {
 		// Check the nonce.
 		check_admin_referer( self::PUBLISH_ACTION, 'apple_news_nonce' );
 
+		if ( ! empty( $_POST['apple_news_is_excluded'] ) && 1 === intval( $_POST['apple_news_is_excluded'] ) ) {
+			$is_excluded = true;
+		} else {
+			$is_excluded = false;
+		}
+		update_post_meta( $post_id, 'apple_news_is_excluded', $is_excluded );
+
 		// Determine whether to save sections.
 		if ( empty( $_POST['apple_news_sections_by_taxonomy'] ) ) {
 			$sections = array();
@@ -234,14 +241,15 @@ class Admin_Apple_Meta_Boxes extends Apple_News {
 
 		// Only show the publish feature if the user is authorized and auto sync is not enabled.
 		// Also check if the post has been previously published and/or deleted.
-		$api_id = get_post_meta( $post->ID, 'apple_news_api_id', true );
-		$deleted = get_post_meta( $post->ID, 'apple_news_api_deleted', true );
-		$pending = get_post_meta( $post->ID, 'apple_news_api_pending', true );
-		$is_preview = get_post_meta( $post->ID, 'apple_news_is_preview', true );
-		$is_hidden = get_post_meta( $post->ID, 'apple_news_is_hidden', true );
-		$maturity_rating = get_post_meta( $post->ID, 'apple_news_maturity_rating', true );
-		$is_sponsored = get_post_meta( $post->ID, 'apple_news_is_sponsored', true );
-		$pullquote = get_post_meta( $post->ID, 'apple_news_pullquote', true );
+		$api_id             = get_post_meta( $post->ID, 'apple_news_api_id', true );
+		$deleted            = get_post_meta( $post->ID, 'apple_news_api_deleted', true );
+		$pending            = get_post_meta( $post->ID, 'apple_news_api_pending', true );
+		$is_excluded        = get_post_meta( $post->ID, 'apple_news_is_excluded', true );
+		$is_preview         = get_post_meta( $post->ID, 'apple_news_is_preview', true );
+		$is_hidden          = get_post_meta( $post->ID, 'apple_news_is_hidden', true );
+		$maturity_rating    = get_post_meta( $post->ID, 'apple_news_maturity_rating', true );
+		$is_sponsored       = get_post_meta( $post->ID, 'apple_news_is_sponsored', true );
+		$pullquote          = get_post_meta( $post->ID, 'apple_news_pullquote', true );
 		$pullquote_position = get_post_meta( $post->ID, 'apple_news_pullquote_position', true );
 
 		// Set default values.
