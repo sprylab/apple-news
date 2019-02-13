@@ -34,7 +34,7 @@ class Admin_Apple_Sections extends Apple_News {
 	 * @var string
 	 * @access private
 	 */
-	private $page_name;
+	protected $page_name;
 
 	/**
 	 * Contains settings loaded from WordPress and merged with defaults.
@@ -181,7 +181,7 @@ class Admin_Apple_Sections extends Apple_News {
 			$post_sections[] = reset( $sections );
 		}
 
-		return $post_sections;
+		return apply_filters( 'apple_news_sections_for_post', $post_sections, $post_id, $format );
 	}
 
 	/**
@@ -199,7 +199,7 @@ class Admin_Apple_Sections extends Apple_News {
 			return null;
 		}
 
-		return $theme_mappings[ $section_id ];
+		return apply_filters( 'apple_news_theme_for_section', $theme_mappings[ $section_id ], $section_id );
 	}
 
 	/**
