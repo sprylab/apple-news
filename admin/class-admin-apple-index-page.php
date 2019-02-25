@@ -158,6 +158,14 @@ class Admin_Apple_Index_Page extends Apple_News {
 				}
 			case self::namespace_action( 'delete' ):
 				return $this->delete_action( $id );
+			default:
+				/**
+				 * Apply a bulk action registered through `apple_news_bulk_actions`.
+				 *
+				 * @param Admin_Apple_Index_Page $index_page Index page instance.
+				 * @param mixed $id Post ID from query variable.
+				 */
+				do_action( 'apple_news_index_action_' . $action, $this, $id );
 		}
 	}
 
@@ -167,7 +175,7 @@ class Admin_Apple_Index_Page extends Apple_News {
 	 * @param string $message The message to show.
 	 * @access public
 	 */
-	private function notice_success( $message ) {
+	public function notice_success( $message ) {
 		Admin_Apple_Notice::success( $message );
 		$this->do_redirect();
 	}
@@ -178,7 +186,7 @@ class Admin_Apple_Index_Page extends Apple_News {
 	 * @param string $message The message to show.
 	 * @access public
 	 */
-	private function notice_error( $message ) {
+	public function notice_error( $message ) {
 		Admin_Apple_Notice::error( $message );
 		$this->do_redirect();
 	}
