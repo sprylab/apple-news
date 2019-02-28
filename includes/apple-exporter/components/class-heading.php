@@ -21,7 +21,7 @@ class Heading extends Component {
 	 * @var array
 	 * @access public
 	 */
-	public static $levels = array( 1, 2, 3, 4, 5, 6 );
+	public static $levels = array( 1, 2, 3, 4, 5, 6, 7, 8 );
 
 	/**
 	 * Look for node matches for this component.

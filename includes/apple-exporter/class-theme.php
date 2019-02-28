@@ -918,6 +918,58 @@ class Theme {
 				'label'       => __( 'Header 6 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
+			'header7_color'                     => array(
+				'default' => '#333333',
+				'label'   => __( 'Header 7 font color', 'apple-news' ),
+				'type'    => 'color',
+			),
+			'header7_font'                      => array(
+				'default' => 'AvenirNext-Bold',
+				'label'   => __( 'Header 7 font face', 'apple-news' ),
+				'type'    => 'font',
+			),
+			'header7_line_height'               => array(
+				'default' => 20.0,
+				'label'   => __( 'Header 7 line height', 'apple-news' ),
+				'type'    => 'float',
+			),
+			'header7_size'                      => array(
+				'default' => 14,
+				'label'   => __( 'Header 7 font size', 'apple-news' ),
+				'type'    => 'integer',
+			),
+			'header7_tracking'                  => array(
+				'default'     => 0,
+				'description' => __( '(Percentage of font size)', 'apple-news' ),
+				'label'       => __( 'Header 7 tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
+			'header8_color'                     => array(
+				'default' => '#333333',
+				'label'   => __( 'Header 8 font color', 'apple-news' ),
+				'type'    => 'color',
+			),
+			'header8_font'                      => array(
+				'default' => 'AvenirNext-Bold',
+				'label'   => __( 'Header 8 font face', 'apple-news' ),
+				'type'    => 'font',
+			),
+			'header8_line_height'               => array(
+				'default' => 18.0,
+				'label'   => __( 'Header 6 line height', 'apple-news' ),
+				'type'    => 'float',
+			),
+			'header8_size'                      => array(
+				'default' => 12,
+				'label'   => __( 'Header 8 font size', 'apple-news' ),
+				'type'    => 'integer',
+			),
+			'header8_tracking'                  => array(
+				'default'     => 0,
+				'description' => __( '(Percentage of font size)', 'apple-news' ),
+				'label'       => __( 'Header 8 tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
 			'initial_dropcap'                   => array(
 				'default' => 'yes',
 				'label'   => __( 'Use initial drop cap', 'apple-news' ),
@@ -1903,6 +1955,26 @@ class Theme {
 					'header6_size',
 					'header6_line_height',
 					'header6_tracking',
+				),
+			),
+			'heading7'        => array(
+				'label'    => __( 'Heading 7', 'apple-news' ),
+				'settings' => array(
+					'header7_font',
+					'header7_color',
+					'header7_size',
+					'header7_line_height',
+					'header7_tracking',
+				),
+			),
+			'heading8'        => array(
+				'label'    => __( 'Heading 8', 'apple-news' ),
+				'settings' => array(
+					'header8_font',
+					'header8_color',
+					'header8_size',
+					'header8_line_height',
+					'header8_tracking',
 				),
 			),
 			'caption'         => array(
