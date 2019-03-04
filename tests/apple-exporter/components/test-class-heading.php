@@ -420,107 +420,6 @@ HTML;
 	}
 
 	/**
-	 * Tests heading 7 settings.
-	 *
-	 * @access public
-	 */
-	public function testSettings7() {
-
-		// Setup.
-		$content = new Exporter_Content( 3, 'Title', '<h7>Heading</h7>' );
-
-		// Set header settings.
-		$theme = \Apple_Exporter\Theme::get_used();
-		$settings = $theme->all_settings();
-		$settings['header7_font'] = 'AmericanTypewriter';
-		$settings['header7_size'] = 10;
-		$settings['header7_color'] = '#567890';
-		$settings['header7_line_height'] = 11;
-		$settings['header7_tracking'] = 1;
-		$theme->load( $settings );
-		$this->assertTrue( $theme->save() );
-
-		// Run the export.
-		$exporter = new Exporter( $content, null, $this->settings );
-		$json = $exporter->export();
-		$this->ensure_tokens_replaced( $json );
-		$json = json_decode( $json, true );
-
-		// Validate header settings in generated JSON.
-		$this->assertEquals(
-			'AmericanTypewriter',
-			$json['componentTextStyles']['default-heading-7']['fontName']
-		);
-		$this->assertEquals(
-			10,
-			$json['componentTextStyles']['default-heading-7']['fontSize']
-		);
-		$this->assertEquals(
-			'#567890',
-			$json['componentTextStyles']['default-heading-7']['textColor']
-		);
-		$this->assertEquals(
-			11,
-			$json['componentTextStyles']['default-heading-7']['lineHeight']
-		);
-		$this->assertEquals(
-			0.01,
-			$json['componentTextStyles']['default-heading-7']['tracking']
-		);
-	}
-
-	/**
-	 * Tests heading 8 settings.
-	 *
-	 * @access public
-	 */
-	public function testSettings8() {
-
-		// Setup.
-		$content = new Exporter_Content( 3, 'Title', '<h8>Heading</h8>' );
-
-		// Set header settings.
-		$theme = \Apple_Exporter\Theme::get_used();
-		$settings = $theme->all_settings();
-		$settings['header8_font'] = 'AmericanTypewriter';
-		$settings['header8_size'] = 10;
-		$settings['header8_color'] = '#567890';
-		$settings['header8_line_height'] = 11;
-		$settings['header8_tracking'] = 1;
-		$theme->load( $settings );
-		$this->assertTrue( $theme->save() );
-
-		// Run the export.
-		$exporter = new Exporter( $content, null, $this->settings );
-		$json = $exporter->export();
-		$this->ensure_tokens_replaced( $json );
-		$json = json_decode( $json, true );
-
-		// Validate header settings in generated JSON.
-		$this->assertEquals(
-			'AmericanTypewriter',
-			$json['componentTextStyles']['default-heading-8']['fontName']
-		);
-		$this->assertEquals(
-			10,
-			$json['componentTextStyles']['default-heading-8']['fontSize']
-		);
-		$this->assertEquals(
-			'#567890',
-			$json['componentTextStyles']['default-heading-8']['textColor']
-		);
-		$this->assertEquals(
-			11,
-			$json['componentTextStyles']['default-heading-8']['lineHeight']
-		);
-		$this->assertEquals(
-			0.01,
-			$json['componentTextStyles']['default-heading-8']['tracking']
-		);
-	}
-
-
-	/**
 	 * Tests the function to migrate legacy header settings.
 	 *
 	 * @see Apple_News::migrate_header_settings()
@@ -577,24 +476,18 @@ HTML;
 		$this->assertEquals( '#abcdef', $settings['header4_color'] );
 		$this->assertEquals( '#abcdef', $settings['header5_color'] );
 		$this->assertEquals( '#abcdef', $settings['header6_color'] );
-		$this->assertEquals( '#abcdef', $settings['header7_color'] );
-		$this->assertEquals( '#abcdef', $settings['header8_color'] );
 		$this->assertEquals( 'AmericanTypewriter', $settings['header1_font'] );
 		$this->assertEquals( 'AmericanTypewriter', $settings['header2_font'] );
 		$this->assertEquals( 'AmericanTypewriter', $settings['header3_font'] );
 		$this->assertEquals( 'AmericanTypewriter', $settings['header4_font'] );
 		$this->assertEquals( 'AmericanTypewriter', $settings['header5_font'] );
 		$this->assertEquals( 'AmericanTypewriter', $settings['header6_font'] );
-		$this->assertEquals( 'AmericanTypewriter', $settings['header7_font'] );
-		$this->assertEquals( 'AmericanTypewriter', $settings['header8_font'] );
 		$this->assertEquals( 128, $settings['header1_line_height'] );
 		$this->assertEquals( 128, $settings['header2_line_height'] );
 		$this->assertEquals( 128, $settings['header3_line_height'] );
 		$this->assertEquals( 128, $settings['header4_line_height'] );
 		$this->assertEquals( 128, $settings['header5_line_height'] );
 		$this->assertEquals( 128, $settings['header6_line_height'] );
-		$this->assertEquals( 128, $settings['header7_line_height'] );
-		$this->assertEquals( 128, $settings['header8_line_height'] );
 	}
 
 	/**

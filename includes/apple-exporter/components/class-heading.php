@@ -21,7 +21,7 @@ class Heading extends Component {
 	 * @var array
 	 * @access public
 	 */
-	public static $levels = array( 1, 2, 3, 4, 5, 6, 7, 8 );
+	public static $levels = array( 1, 2, 3, 4, 5, 6 );
 
 	/**
 	 * Look for node matches for this component.
@@ -72,8 +72,8 @@ class Heading extends Component {
 				'columnStart' => '#body_offset#',
 				'columnSpan'  => '#body_column_span#',
 				'margin'      => array(
-					'bottom' => '#margin#',
-					'top'    => '#margin#',
+					'bottom' => '#margin_bottom#',
+					'top'    => '#margin_top#',
 				),
 			)
 		);
@@ -105,8 +105,8 @@ class Heading extends Component {
 				),
 				array(
 					'margin'        => [
-						'top'    => '#header' . $level . '_margin#',
-						'bottom' => '#header' . $level . '_margin#',
+						'top'    => '#header' . $level . '_margin_top#',
+						'bottom' => '#header' . $level . '_margin_bottom#',
 					],
 				)
 			);

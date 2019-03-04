@@ -50,8 +50,8 @@ class Title extends Component {
 			__( 'Layout', 'apple-news' ),
 			array(
 				'margin' => array(
-					'top'    => '#header1_margin#',
-					'bottom' => '#header1_margin#',
+					'top'    => '#header1_margin_top#',
+					'bottom' => '#header1_margin_bottom#',
 				),
 			)
 		);
