@@ -72,8 +72,8 @@ class Heading extends Component {
 				'columnStart' => '#body_offset#',
 				'columnSpan'  => '#body_column_span#',
 				'margin'      => array(
-					'bottom' => 15,
-					'top'    => 15,
+					'bottom' => '#margin#',
+					'top'    => '#margin#',
 				),
 			)
 		);
@@ -95,6 +95,22 @@ class Heading extends Component {
 					'tracking'      => '#header' . $level . '_tracking#',
 				)
 			);
+
+			$this->register_spec(
+				'heading-layout-' . $level,
+				sprintf(
+					// translators: token is the heading level.
+					__( 'Level %s Layout', 'apple-news' ),
+					$level
+				),
+				array(
+					'margin'        => [
+						'top'    => '#header' . $level . '_margin#',
+						'bottom' => '#header' . $level . '_margin#',
+					],
+				)
+			);
+
 		}
 	}
 
@@ -185,7 +201,7 @@ class Heading extends Component {
 		);
 
 		$this->set_style( $level );
-		$this->set_layout();
+		$this->set_layout( $level );
 	}
 
 	/**
@@ -193,14 +209,14 @@ class Heading extends Component {
 	 *
 	 * @access private
 	 */
-	private function set_layout() {
+	private function set_layout( $level ) {
 
 		// Get information about the currently loaded theme.
 		$theme = \Apple_Exporter\Theme::get_used();
 
 		$this->register_layout(
-			'heading-layout',
-			'heading-layout',
+			'heading-layout-' . $level,
+			'heading-layout-' . $level,
 			array(
 				'#body_offset#'      => $theme->get_body_offset(),
 				'#body_column_span#' => $theme->get_body_column_span(),

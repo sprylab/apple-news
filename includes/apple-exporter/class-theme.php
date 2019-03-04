@@ -788,6 +788,11 @@ class Theme {
 				'label'       => __( 'Header 1 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
+			'header1_margin'                  => array(
+				'default'     => 0,
+				'label'       => __( 'Header 1 Margin', 'apple-news' ),
+				'type'        => 'integer',
+			),
 			'header2_color'                     => array(
 				'default' => '#333333',
 				'label'   => __( 'Header 2 font color', 'apple-news' ),
@@ -812,6 +817,11 @@ class Theme {
 				'default'     => 0,
 				'description' => __( '(Percentage of font size)', 'apple-news' ),
 				'label'       => __( 'Header 2 tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
+			'header2_margin'                  => array(
+				'default'     => 0,
+				'label'       => __( 'Header 2 Margin', 'apple-news' ),
 				'type'        => 'integer',
 			),
 			'header3_color'                     => array(
@@ -840,6 +850,11 @@ class Theme {
 				'label'       => __( 'Header 3 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
+			'header3_margin'                  => array(
+				'default'     => 0,
+				'label'       => __( 'Header 3 Margin', 'apple-news' ),
+				'type'        => 'integer',
+			),
 			'header4_color'                     => array(
 				'default' => '#333333',
 				'label'   => __( 'Header 4 font color', 'apple-news' ),
@@ -864,6 +879,11 @@ class Theme {
 				'default'     => 0,
 				'description' => __( '(Percentage of font size)', 'apple-news' ),
 				'label'       => __( 'Header 4 tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
+			'header4_margin'                  => array(
+				'default'     => 0,
+				'label'       => __( 'Header 4 Margin', 'apple-news' ),
 				'type'        => 'integer',
 			),
 			'header5_color'                     => array(
@@ -892,6 +912,11 @@ class Theme {
 				'label'       => __( 'Header 5 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
+			'header5_margin'                  => array(
+				'default'     => 0,
+				'label'       => __( 'Header 5 Margin', 'apple-news' ),
+				'type'        => 'integer',
+			),
 			'header6_color'                     => array(
 				'default' => '#333333',
 				'label'   => __( 'Header 6 font color', 'apple-news' ),
@@ -916,6 +941,11 @@ class Theme {
 				'default'     => 0,
 				'description' => __( '(Percentage of font size)', 'apple-news' ),
 				'label'       => __( 'Header 6 tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
+			'header6_margin'                  => array(
+				'default'     => 0,
+				'label'       => __( 'Header 6 Margin', 'apple-news' ),
 				'type'        => 'integer',
 			),
 			'initial_dropcap'                   => array(
@@ -1853,6 +1883,7 @@ class Theme {
 					'header1_size',
 					'header1_line_height',
 					'header1_tracking',
+					'header1_margin',
 				),
 			),
 			'heading2'        => array(
@@ -1863,6 +1894,7 @@ class Theme {
 					'header2_size',
 					'header2_line_height',
 					'header2_tracking',
+					'header2_margin',
 				),
 			),
 			'heading3'        => array(
@@ -1873,6 +1905,7 @@ class Theme {
 					'header3_size',
 					'header3_line_height',
 					'header3_tracking',
+					'header3_margin',
 				),
 			),
 			'heading4'        => array(
@@ -1883,6 +1916,7 @@ class Theme {
 					'header4_size',
 					'header4_line_height',
 					'header4_tracking',
+					'header4_margin',
 				),
 			),
 			'heading5'        => array(
@@ -1893,6 +1927,7 @@ class Theme {
 					'header5_size',
 					'header5_line_height',
 					'header5_tracking',
+					'header5_margin',
 				),
 			),
 			'heading6'        => array(
@@ -1903,6 +1938,7 @@ class Theme {
 					'header6_size',
 					'header6_line_height',
 					'header6_tracking',
+					'header6_margin',
 				),
 			),
 			'caption'         => array(
