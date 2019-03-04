@@ -265,6 +265,6 @@ class Admin_Apple_News extends Apple_News {
 			set_transient( $key, $state, apply_filters( 'apple_news_post_status_cache_expiration', $cache_expiration, $state ) );
 		}
 
-		return $state;
+		return apply_filters( 'apple_news_post_state', $state, $post_id );
 	}
 }
