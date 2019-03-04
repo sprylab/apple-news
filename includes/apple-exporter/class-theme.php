@@ -1941,6 +1941,26 @@ class Theme {
 					'header6_margin',
 				),
 			),
+			'heading7'        => array(
+				'label'    => __( 'Heading 7', 'apple-news' ),
+				'settings' => array(
+					'header7_font',
+					'header7_color',
+					'header7_size',
+					'header7_line_height',
+					'header7_tracking',
+				),
+			),
+			'heading8'        => array(
+				'label'    => __( 'Heading 8', 'apple-news' ),
+				'settings' => array(
+					'header8_font',
+					'header8_color',
+					'header8_size',
+					'header8_line_height',
+					'header8_tracking',
+				),
+			),
 			'caption'         => array(
 				'label'    => __( 'Image caption', 'apple-news' ),
 				'settings' => array(
