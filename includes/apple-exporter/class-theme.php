@@ -788,15 +788,15 @@ class Theme {
 				'label'       => __( 'Header 1 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
-			'header1_margin_top'                 => array(
-				'default'     => 0,
-				'label'       => __( 'Header 1 Top Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header1_margin_top'                => array(
+				'default' => 0,
+				'label'   => __( 'Header 1 Top Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
-			'header1_margin_bottom'              => array(
-				'default'     => 0,
-				'label'       => __( 'Header 1 Bottom Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header1_margin_bottom'             => array(
+				'default' => 0,
+				'label'   => __( 'Header 1 Bottom Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
 			'header2_color'                     => array(
 				'default' => '#333333',
@@ -824,15 +824,15 @@ class Theme {
 				'label'       => __( 'Header 2 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
-			'header2_margin_top'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 2 Top Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header2_margin_top'                => array(
+				'default' => 0,
+				'label'   => __( 'Header 2 Top Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
-			'header2_margin_bottom'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 2 Bottom Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header2_margin_bottom'             => array(
+				'default' => 0,
+				'label'   => __( 'Header 2 Bottom Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
 			'header3_color'                     => array(
 				'default' => '#333333',
@@ -860,15 +860,15 @@ class Theme {
 				'label'       => __( 'Header 3 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
-			'header3_margin_top'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 3 Top Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header3_margin_top'                => array(
+				'default' => 0,
+				'label'   => __( 'Header 3 Top Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
-			'header3_margin_bottom'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 3 Bottom Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header3_margin_bottom'             => array(
+				'default' => 0,
+				'label'   => __( 'Header 3 Bottom Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
 			'header4_color'                     => array(
 				'default' => '#333333',
@@ -896,15 +896,15 @@ class Theme {
 				'label'       => __( 'Header 4 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
-			'header4_margin_top'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 4 Top Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header4_margin_top'                => array(
+				'default' => 0,
+				'label'   => __( 'Header 4 Top Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
-			'header4_margin_bottom'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 4 Bottom Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header4_margin_bottom'             => array(
+				'default' => 0,
+				'label'   => __( 'Header 4 Bottom Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
 			'header5_color'                     => array(
 				'default' => '#333333',
@@ -932,15 +932,15 @@ class Theme {
 				'label'       => __( 'Header 5 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
-			'header5_margin_top'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 5 Top Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header5_margin_top'                => array(
+				'default' => 0,
+				'label'   => __( 'Header 5 Top Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
-			'header5_margin_bottom'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 5 Bottom Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header5_margin_bottom'             => array(
+				'default' => 0,
+				'label'   => __( 'Header 5 Bottom Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
 			'header6_color'                     => array(
 				'default' => '#333333',
@@ -968,15 +968,15 @@ class Theme {
 				'label'       => __( 'Header 6 tracking', 'apple-news' ),
 				'type'        => 'integer',
 			),
-			'header6_margin_top'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 6 Top Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header6_margin_top'                => array(
+				'default' => 0,
+				'label'   => __( 'Header 6 Top Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
-			'header6_margin_bottom'                  => array(
-				'default'     => 0,
-				'label'       => __( 'Header 6 Bottom Margin', 'apple-news' ),
-				'type'        => 'integer',
+			'header6_margin_bottom'             => array(
+				'default' => 0,
+				'label'   => __( 'Header 6 Bottom Margin', 'apple-news' ),
+				'type'    => 'integer',
 			),
 			'initial_dropcap'                   => array(
 				'default' => 'yes',

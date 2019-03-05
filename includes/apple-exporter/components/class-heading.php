@@ -104,7 +104,7 @@ class Heading extends Component {
 					$level
 				),
 				array(
-					'margin'        => [
+					'margin' => [
 						'top'    => '#header' . $level . '_margin_top#',
 						'bottom' => '#header' . $level . '_margin_bottom#',
 					],
@@ -208,6 +208,7 @@ class Heading extends Component {
 	 * Set the layout for the component.
 	 *
 	 * @access private
+	 * @param string $level The level of heading
 	 */
 	private function set_layout( $level ) {
 

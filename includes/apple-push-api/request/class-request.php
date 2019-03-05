@@ -70,7 +70,8 @@ class Request {
 
 		// Set the default WordPress HTTP API args.
 		$this->default_args = apply_filters(
-			'apple_news_request_args', array(
+			'apple_news_request_args',
+			array(
 				'reject_unsafe_urls' => true,
 				'timeout'            => 5,
 			)
