@@ -198,7 +198,8 @@ class Admin_Apple_Index_Page extends Apple_News {
 	 */
 	private function do_redirect() {
 		// Perform the redirect.
-		wp_safe_redirect( esc_url_raw( self::action_query_params( '', menu_page_url( $this->plugin_slug . '_index', false ) ) ) );
+		$menu_page_url = apply_filters( 'apple_news_menu_page_url', menu_page_url( $this->plugin_slug . '_index', false ) );
+		wp_safe_redirect( esc_url_raw( self::action_query_params( '', $menu_page_url ) ) );
 		if ( ! defined( 'APPLE_NEWS_UNIT_TESTS' ) || ! APPLE_NEWS_UNIT_TESTS ) {
 			exit;
 		}

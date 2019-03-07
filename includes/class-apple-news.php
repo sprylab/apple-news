@@ -813,4 +813,5 @@ class Apple_News {
 
 		return $wp_settings;
 	}
+
 }
