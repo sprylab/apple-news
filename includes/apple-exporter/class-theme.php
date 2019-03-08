@@ -762,6 +762,32 @@ class Theme {
 				'options' => array( 'gallery', 'mosaic' ),
 				'type'    => 'select',
 			),
+			'gallery_caption_color'                     => array(
+				'default' => '#4f4f4f',
+				'label'   => __( 'Caption font color', 'apple-news' ),
+				'type'    => 'color',
+			),
+			'gallery_caption_font'                      => array(
+				'default' => 'AvenirNext-Italic',
+				'label'   => __( 'Caption font face', 'apple-news' ),
+				'type'    => 'font',
+			),
+			'gallery_caption_line_height'               => array(
+				'default' => 24.0,
+				'label'   => __( 'Caption line height', 'apple-news' ),
+				'type'    => 'float',
+			),
+			'gallery_caption_size'                      => array(
+				'default' => 16,
+				'label'   => __( 'Caption font size', 'apple-news' ),
+				'type'    => 'integer',
+			),
+			'gallery_caption_tracking'                  => array(
+				'default'     => 0,
+				'description' => __( '(Percentage of font size)', 'apple-news' ),
+				'label'       => __( 'Caption tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
 			'header1_color'                     => array(
 				'default' => '#333333',
 				'label'   => __( 'Header 1 font color', 'apple-news' ),
@@ -2062,6 +2088,17 @@ class Theme {
 				'description' => __( 'Can either be a standard gallery, or mosaic.', 'apple-news' ),
 				'settings'    => array( 'gallery_type' ),
 			),
+			'gallery_caption'         => array(
+				'label'    => __( 'Gallery caption', 'apple-news' ),
+				'settings' => array(
+					'gallery_caption_font',
+					'gallery_caption_size',
+					'gallery_caption_line_height',
+					'gallery_caption_tracking',
+					'gallery_caption_color',
+				),
+			),
+
 			'advertisement'   => array(
 				'label'    => __( 'Advertisement', 'apple-news' ),
 				'settings' => array(

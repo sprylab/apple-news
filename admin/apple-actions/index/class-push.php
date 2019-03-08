@@ -187,7 +187,7 @@ class Push extends API_Action {
 
 		// Sanitize the data before using since it's filterable.
 		$json = $this->sanitize_json( $json );
-
+wp_die( $json );
 		// Bundles should be an array of URLs.
 		if ( ! empty( $bundles ) && is_array( $bundles ) ) {
 			$bundles = array_map( 'esc_url_raw', $bundles );

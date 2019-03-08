@@ -61,6 +61,20 @@ class Gallery extends Component {
 				),
 			)
 		);
+
+			$this->register_spec(
+				'default-gallery-caption',
+				__( 'Caption', 'apple-news' ),
+				array(
+					'fontName'      => '#gallery_caption_font#',
+					'fontSize'      => '#gallery_caption_size#',
+					'lineHeight'    => '#gallery_caption_line_height#',
+					'textColor'     => '#gallery_caption_color#',
+					'textAlignment' => '#text_alignment#',
+					'tracking'      => '#gallery_caption_tracking#',
+				)
+			);
+
 	}
 
 	/**
@@ -115,7 +129,9 @@ class Gallery extends Component {
 					'text' => sanitize_text_field(
 						trim( $caption->item( 0 )->nodeValue ) // phpcs:ignore WordPress.NamingConventions.ValidVariableName.NotSnakeCaseMemberVar
 					),
+					'textStyle' => 'default-gallery-caption',
 				);
+				$this->set_style();
 			}
 
 			// Try to add the alt text as the accessibility caption.
@@ -158,6 +174,32 @@ class Gallery extends Component {
 			'gallery-layout',
 			array(),
 			'layout'
+		);
+	}
+
+	/**
+	 * Set the style for the component.
+	 *
+	 * @param int $level The heading level (1-6).
+	 * @access private
+	 */
+	private function set_style() {
+
+		// Get information about the currently loaded theme.
+		$theme = \Apple_Exporter\Theme::get_used();
+
+		$this->register_style(
+			'default-gallery-caption',
+			'default-gallery-caption',
+			array(
+				'#gallery-caption_font#'        => $theme->get_value( 'gallery_caption_font' ),
+				'#gallery-caption_size#'        => intval( $theme->get_value( 'gallery_caption_size' ) ),
+				'#gallery-caption_line_height#' => intval( $theme->get_value( 'gallery_caption_line_height' ) ),
+				'#gallery-caption_color#'       => $theme->get_value( 'gallery_caption_color' ),
+				'#text_alignment#'                   => $this->find_text_alignment(),
+				'#gallery-caption_tracking#'    => intval( $theme->get_value( 'gallery_caption_tracking' ) ) / 100,
+			),
+			'textStyle'
 		);
 	}
 }

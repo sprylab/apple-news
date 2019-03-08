@@ -179,7 +179,6 @@ abstract class Builder {
 	 * @return string The URL to use for this asset in JSON.
 	 */
 	protected function maybe_bundle_source( $source, $filename = '' ) {
-
 		// If we're using remote images, do nothing.
 		if ( 'yes' === $this->get_setting( 'use_remote_images' ) ) {
 			return $source;
