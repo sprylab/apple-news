@@ -1376,16 +1376,15 @@ class Theme {
 	 * @return mixed The value for the option name provided.
 	 */
 	public function get_value( $option ) {
-
 		// Attempt to return the value from the values array.
 		if ( isset( $this->_values[ $option ] ) ) {
-			return $this->_values[ $option ];
+			return apply_filters( 'apple_news_get_value', $this->_values[ $option ], $option );
 		}
 
 		// Attempt to fall back to the default.
 		$options = self::get_options();
 		if ( isset( $options[ $option ]['default'] ) ) {
-			return $options[ $option ]['default'];
+			return apply_filters( 'apple_news_get_value', $options[ $option ]['default'], $option );
 		}
 
 		return null;
