@@ -1116,6 +1116,58 @@ class Theme {
 				'options' => array( 'none', 'uppercase' ),
 				'type'    => 'select',
 			),
+			'recirc_header_color'                     => array(
+				'default' => '#4d4d4d',
+				'label'   => __( 'Header font color', 'apple-news' ),
+				'type'    => 'color',
+			),
+			'recirc_header_font'                      => array(
+				'default' => 'OpenSans-Regular',
+				'label'   => __( 'Header font face', 'apple-news' ),
+				'type'    => 'font',
+			),
+			'recirc_header_line_height'               => array(
+				'default' => 24.0,
+				'label'   => __( 'Header line height', 'apple-news' ),
+				'type'    => 'float',
+			),
+			'recirc_header_size'                      => array(
+				'default' => 20,
+				'label'   => __( 'Header font size', 'apple-news' ),
+				'type'    => 'integer',
+			),
+			'recirc_header_tracking'                  => array(
+				'default'     => 0,
+				'description' => __( '(Percentage of font size)', 'apple-news' ),
+				'label'       => __( 'Header tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
+			'recirc_link_color'                     => array(
+				'default' => '#2d2d2d',
+				'label'   => __( 'Link font color', 'apple-news' ),
+				'type'    => 'color',
+			),
+			'recirc_link_font'                      => array(
+				'default' => 'OpenSans-Regular',
+				'label'   => __( 'Link font face', 'apple-news' ),
+				'type'    => 'font',
+			),
+			'recirc_link_line_height'               => array(
+				'default' => 18.0,
+				'label'   => __( 'Link line height', 'apple-news' ),
+				'type'    => 'float',
+			),
+			'recirc_link_size'                      => array(
+				'default' => 16,
+				'label'   => __( 'Link font size', 'apple-news' ),
+				'type'    => 'integer',
+			),
+			'recirc_link_tracking'                  => array(
+				'default'     => 0,
+				'description' => __( '(Percentage of font size)', 'apple-news' ),
+				'label'       => __( 'Link tracking', 'apple-news' ),
+				'type'        => 'integer',
+			),
 			'screenshot_url'                    => array(
 				'default'     => '',
 				'description' => __( 'An optional URL to a screenshot of this theme. Should be a 1200x900 PNG.', 'apple-news' ),
@@ -2095,6 +2147,21 @@ class Theme {
 					'gallery_caption_line_height',
 					'gallery_caption_tracking',
 					'gallery_caption_color',
+				),
+			),
+			'recirc_header'         => array(
+				'label'    => __( 'Recirculation Module', 'apple-news' ),
+				'settings' => array(
+					'recirc_header_font',
+					'recirc_header_size',
+					'recirc_header_line_height',
+					'recirc_header_tracking',
+					'recirc_header_color',
+					'recirc_link_font',
+					'recirc_link_size',
+					'recirc_link_line_height',
+					'recirc_link_tracking',
+					'recirc_link_color',
 				),
 			),
 

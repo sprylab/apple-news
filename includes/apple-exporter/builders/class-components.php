@@ -201,6 +201,54 @@ class Components extends Builder {
 		}
 	}
 
+/**
+	 * Add a recirc component if needed.
+	 *
+	 * @param array $components An array of Component objects to analyze.
+	 * @access private
+	 */
+	private function add_recirc_if_needed( &$components ) {
+
+		// Must we add a recirc?
+		// Don't show on magazine articles.
+		if ( ! empty( get_post_meta( $this->content_id(), 'issue', true ) ) ) {
+			return;
+		}
+
+		$hide_recirc = get_post_meta( $this->content_id(), 'disable-apple-news-recirc', true );
+		if ( '1' === $hide_recirc ) {
+			return;
+		}
+		// If the position is not top, make some math for middle and bottom.
+		$total = count( $components );
+		$start = floor( $total / 2 );
+
+		// Look for potential anchor targets.
+		for ( $position = $start; $position < $total; $position ++ ) {
+			if ( $components[ $position ]->can_be_anchor_target() ) {
+				break;
+			}
+		}
+
+		// If none was found, do not add.
+		if ( ! $components[ $position ]->can_be_anchor_target() ) {
+			return;
+		}
+
+		// Build a new component and set the anchor position to AUTO.
+		$component = $this->get_component_from_shortname(
+			'recirc',
+			$this->content_id()
+		);
+		$component->set_anchor_position( Component::ANCHOR_AUTO );
+
+		// Anchor the newly created pullquote component to the target component.
+		$this->anchor_together( $component, $components[ $position ] );
+
+		// Add component in position.
+		array_splice( $components, $position, 0, array( $component ) );
+	}
+
 	/**
 	 * Anchor components that are marked as can_be_anchor_target.
 	 *
@@ -731,6 +779,7 @@ class Components extends Builder {
 		$this->add_thumbnail_if_needed( $components );
 		$this->anchor_components( $components );
 		$this->add_pullquote_if_needed( $components );
+		$this->add_recirc_if_needed( $components );
 
 		return $components;
 	}
