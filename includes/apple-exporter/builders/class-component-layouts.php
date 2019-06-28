@@ -159,8 +159,10 @@ class Component_Layouts extends Builder {
 			$this->register_layout(
 				$layout_name,
 				array(
-					'columnStart' => $col_start,
-					'columnSpan'  => $col_span,
+					'columnStart'          => $col_start,
+					'columnSpan'           => $col_span,
+					'ignoreDocumentGutter' => true,
+					'ignoreDocumentMargin' => true,
 				)
 			);
 		}
