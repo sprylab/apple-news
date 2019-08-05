@@ -210,8 +210,8 @@ class Components extends Builder {
 	private function add_recirc_if_needed( &$components ) {
 
 		// Must we add a recirc?
-		// Don't show on magazine articles.
-		if ( ! empty( get_post_meta( $this->content_id(), 'issue', true ) ) ) {
+		// Don't show on magazine articles with Letters category.
+		if ( has_category( 'letters', $this->content_id() ) ) {
 			return;
 		}
 
