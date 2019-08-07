@@ -121,7 +121,7 @@ class SoundCloud extends Component {
 			'text'      => $link,
 			'format'    => 'html',
 			'textStyle' => [
-				'fontSize' => 14,
+				'fontSize' => 18,
 			],
 		];
 
