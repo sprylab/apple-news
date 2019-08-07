@@ -74,7 +74,7 @@ class WP_Embed extends Component {
 			// If the url has a host, set as caption.
 			if ( $url && isset( wp_parse_url( $url )['host'] ) ) {
 				$parsed_url = wp_parse_url( $url );
-				$caption = '<a href="' . esc_url( $url ) . '">' . sprintf( esc_html__( 'View on %s', 'apple-news' ), esc_html( $parsed_url['host'] ) ) . '</a>';
+				$caption = '<a href="' . esc_url( $url ) . '">' . sprintf( esc_html__( 'View on %s.', 'apple-news' ), esc_html( $parsed_url['host'] ) ) . '</a>';
 
 				if ( preg_match( '#<\s*?a href\b[^>]*>(.*?)</a\b[^>]*>#s', $html, $title_matches ) ) {
 					$title = $title_matches[1];
