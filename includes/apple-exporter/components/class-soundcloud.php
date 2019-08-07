@@ -110,7 +110,7 @@ class SoundCloud extends Component {
 				'text'      => $caption,
 				'format'    => 'html',
 				'textStyle' => [
-					'fontSize' => 14,
+					'fontSize' => 16,
 				],
 				'hidden'    => $hide_article_caption,
 			];
@@ -121,7 +121,7 @@ class SoundCloud extends Component {
 			'text'      => $link,
 			'format'    => 'html',
 			'textStyle' => [
-				'fontSize' => 18,
+				'fontSize' => 14,
 			],
 		];
 
