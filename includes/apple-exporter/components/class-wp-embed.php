@@ -1,8 +1,8 @@
 <?php
 /**
- * Publish to Apple News Includes: Apple_Exporter\Components\WPEmbed class
+ * Publish to Apple News Includes: Apple_Exporter\Components\WP_Embed class
  *
- * Contains a class which is used to transform WPEmbed embeds into Apple News format.
+ * Contains a class which is used to transform WP_Embed embeds into Apple News format.
  *
  * @package Apple_News
  * @subpackage Apple_Exporter
@@ -12,7 +12,7 @@
 namespace Apple_Exporter\Components;
 
 /**
- * A class to transform an WPEmbed embed into an WPEmbed Apple News component.
+ * A class to transform an WP_Embed embed into an WP_Embed Apple News component.
  *
  * @since 0.2.0
  */
@@ -46,7 +46,7 @@ class WP_Embed extends Component {
 	public function register_specs() {
 		$this->register_spec(
 			'wp-embed-json',
-			__( 'WPEmbed JSON', 'apple-news' ),
+			__( 'WP_Embed JSON', 'apple-news' ),
 			array(
 				'role'       => 'container',
 				'components' => '#components#',
