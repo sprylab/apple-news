@@ -76,19 +76,21 @@ class Spotify extends Component {
 	protected function build( $html ) {
 
 		$caption              = '';
+		$hide_article_caption = true;
+		$link                 = '';
 		$title                = '';
 		$url                  = '';
-		$hide_article_caption = true;
 
 		// If we have a url, parse.
 		if ( preg_match( '#<iframe.*?title="(.*?)".*?src="(.*?)"(.*?)>#', $html, $matches ) ) {
 			$title = $matches[1];
 			$url   = $matches[2];
+			$link  = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'View on Spotify.', 'apple-news' ) . '</a>';
 
 			// If caption exists, set as caption.
 			$hide_article_caption = false;
-			if ( preg_match( '#figcaption>(.*?)</fig#', $html, $caption_matches ) ) {
-				$caption = '<a href="' . esc_url( $url ) . '">' . esc_html__( 'View on Spotify.', 'apple-news' ) . '</a>';
+			if ( preg_match( '#figcaption>(.*?)</figcaption#', $html, $caption_matches ) ) {
+				$caption = $caption_matches[1];
 				$hide_article_caption = false;
 			}
 		}
@@ -103,7 +105,7 @@ class Spotify extends Component {
 		];
 
 		if ( ! empty( $caption ) ) {
-			$registration_array['#components#'][]= [
+			$registration_array['#components#'][] = [
 				'role'      => 'caption',
 				'text'      => $caption,
 				'format'    => 'html',
@@ -113,6 +115,15 @@ class Spotify extends Component {
 				'hidden'    => $hide_article_caption,
 			];
 		}
+
+		$registration_array['#components#'][] = [
+			'role'      => 'body',
+			'text'      => $link,
+			'format'    => 'html',
+			'textStyle' => [
+				'fontSize' => 14,
+			],
+		];
 
 		$this->register_json(
 			'spotify-json',
