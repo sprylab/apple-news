@@ -48,8 +48,20 @@ class WP_Embed extends Component {
 			'wp-embed-json',
 			__( 'WP_Embed JSON', 'apple-news' ),
 			array(
+				'layout'     => 'embed-layout',
 				'role'       => 'container',
 				'components' => '#components#',
+			)
+		);
+
+		$this->register_spec(
+			'embed-layout',
+			__( 'Embed Layout', 'apple-news' ),
+			array(
+				'margin'      => array(
+					'top'    => 15,
+					'bottom' => 15,
+				),
 			)
 		);
 	}
@@ -77,24 +89,25 @@ class WP_Embed extends Component {
 				$caption = '<a href="' . esc_url( $url ) . '">' . sprintf( esc_html__( 'View on %s.', 'apple-news' ), esc_html( $parsed_url['host'] ) ) . '</a>';
 
 				if ( preg_match( '#<\s*?a href\b[^>]*>(.*?)</a\b[^>]*>#s', $html, $title_matches ) ) {
-					$title = $title_matches[1];
+					$title = sprintf( esc_html__( 'WordPress Embed: %s.', 'apple-news' ), esc_html( $title_matches[1] ) );
 				}
 			}
 		}
 
 		$registration_array = [
-			'#components#' => [
+			'layout'          => 'embed-layout',
+			'#components#'    => [
 				[
 					'role' => 'heading2',
 					'text' => $title,
 				],
 				[
-					'role'   => 'body',
-					'text'   => $caption,
-					'format' => 'html',
+					'role'      => 'body',
+					'text'      => $caption,
+					'format'    => 'html',
 					'textStyle' => [
 						'fontSize' => 14,
-					]
+					],
 				],
 			],
 		];
@@ -103,5 +116,11 @@ class WP_Embed extends Component {
 			'wp-embed-json',
 			$registration_array
 		);
+
+		// Get information about the currently loaded theme.
+		$theme = \Apple_Exporter\Theme::get_used();
+
+		// Register the layout for the table.
+		$this->register_layout( 'embed-layout', 'embed-layout' );
 	}
 }
