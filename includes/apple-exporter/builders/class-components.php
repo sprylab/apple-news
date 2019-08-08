@@ -728,7 +728,8 @@ class Components extends Builder {
 		}
 
 		// Perform additional processing after components have been created.
-		$this->add_thumbnail_if_needed( $components );
+		// SPRYLAB CHANGE: do not add cover image from first image element in article
+		// $this->add_thumbnail_if_needed( $components );
 		$this->anchor_components( $components );
 		$this->add_pullquote_if_needed( $components );
 
